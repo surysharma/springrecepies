@@ -1,4 +1,3 @@
-import domain.entity.Book;
 import domain.service.BookShop;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -14,7 +13,6 @@ public class transactionsExample {
         BookShop bookShop = (BookShop) context.getBean("bookShop");
         assertNotNull(bookShop);
 
-        Book book = new Book("1","The first Book");
-        bookShop.purchase(book);
+        bookShop.purchase("user1", "1");
     }
 }

@@ -56,6 +56,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "BookInfo[ISBN:"+isbn+", BookName:" + bookName+ ", Price:" + price+"]";
+        return "Book[ISBN:"+isbn+", BookName:" + bookName+ ", Price:" + price+"]";
     }
 }

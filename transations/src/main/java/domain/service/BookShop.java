@@ -1,7 +1,5 @@
 package domain.service;
 
-import domain.entity.Book;
-
 public interface BookShop {
-    public void purchase(Book... books);
+    public void purchase(String userName, String isbn);
 }
