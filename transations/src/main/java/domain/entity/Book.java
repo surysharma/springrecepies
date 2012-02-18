@@ -1,32 +1,33 @@
-package domain;
+package domain.entity;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
-
-@Entity
-@Table(name = "book")
 public class Book {
 
 
-    private Long id;
+    private String isbn;
     private String bookName;
-    private BigDecimal price;
+    private int price;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    public Long getId() {
-        return id;
+    public Book(String isbn, String bookName) {
+        this.isbn = isbn;
+        this.bookName = bookName;
+    }
+    public Book(String isbn, String bookName, int price) {
+        this.isbn = isbn;
+        this.bookName = bookName;
+        this.price = price;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getId() {
+        return isbn;
     }
 
-    @Column(name = "book_name")
+    public void setId(String isbn) {
+        this.isbn = isbn;
+    }
+
     public String getBookName() {
         return bookName;
     }
@@ -35,12 +36,11 @@ public class Book {
         this.bookName = bookName;
     }
 
-    @Column(name = "price")
-    public BigDecimal getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -54,4 +54,8 @@ public class Book {
         return HashCodeBuilder.reflectionHashCode(this, new String[]{"id"});
     }
 
+    @Override
+    public String toString() {
+        return "BookInfo[ISBN:"+isbn+", BookName:" + bookName+ ", Price:" + price+"]";
+    }
 }

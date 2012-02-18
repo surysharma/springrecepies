@@ -1,13 +1,10 @@
-package domain;
+package domain.entity;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.persistence.*;
 import java.util.List;
 
-@Entity
-@Table(name = "book_stock")
 public class BookStock {
     private Long stock;
 
@@ -15,9 +12,6 @@ public class BookStock {
 
     private Long id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     public Long getId() {
         return id;
     }
@@ -26,7 +20,6 @@ public class BookStock {
         this.id = id;
     }
 
-    @Column(name = "stock")
     public Long getStock() {
         return stock;
     }
@@ -35,7 +28,6 @@ public class BookStock {
         this.stock = stock;
     }
 
-    @OneToMany
     public List<Book> getBooks() {
         return books;
     }

@@ -1,8 +1,8 @@
 package utils;
 
 import com.google.common.collect.Lists;
-import domain.Book;
-import domain.BookStock;
+import domain.entity.Book;
+import domain.entity.BookStock;
 
 import java.util.List;
 
